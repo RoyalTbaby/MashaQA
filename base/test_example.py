@@ -42,3 +42,14 @@ def test_odds(foo):
 def test_evens(foo):
     assert any(i % 2 == 0 for i in foo)
 
+
+@pytest.mark.negative
+def test_negative(foo):
+    assert all(i >= 0 for i in foo)
+
+
+@pytest.mark.range
+def test_min_max(foo):
+    assert min(foo) >= 1
+    assert max(foo) <= 50
+
